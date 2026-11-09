@@ -52,7 +52,7 @@ const sanitizeUser = (user) => {
 };
 
 // REGISTER
-exports.register = async (req, res) => {
+const register = async (req, res) => {
   try {
     const { name, email, phone, password } = req.body;
 
@@ -155,7 +155,7 @@ exports.register = async (req, res) => {
 };
 
 // LOGIN
-exports.login = async (req, res) => {
+const login = async (req, res) => {
   try {
     const { email, password } = req.body;
 
@@ -224,7 +224,7 @@ exports.login = async (req, res) => {
 };
 
 // REFRESH ACCESS TOKEN
-exports.refreshAccessToken = async (req, res) => {
+const refreshAccessToken = async (req, res) => {
   try {
     const refreshToken = req.cookies?.refreshToken;
 
@@ -304,7 +304,7 @@ exports.refreshAccessToken = async (req, res) => {
 };
 
 // LOGOUT
-exports.logout = async (req, res) => {
+const logout = async (req, res) => {
   try {
     const userId = req.user?.id || req.user?._id;
 
@@ -331,7 +331,7 @@ exports.logout = async (req, res) => {
 };
 
 // GET LOGGED-IN USER PROFILE
-exports.getMe = async (req, res) => {
+const getMe = async (req, res) => {
   try {
     const userId = req.user?.id || req.user?._id;
 
@@ -364,3 +364,11 @@ exports.getMe = async (req, res) => {
     });
   }
 };
+
+module.exports ={
+    register,
+    login,
+    refreshAccessToken,
+    logout,
+    getMe
+}

@@ -1,8 +1,8 @@
 const app = require('./src/app')
 require('dotenv').config();
-const connectdb = require('./src/config/db');
+const connectDB = require('./src/config/db');
 
-connectdb();
+connectDB();
 
 app.listen(3000,()=>{
     console.log("server is running on 3000")
